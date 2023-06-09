@@ -1,0 +1,22 @@
+* {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.row {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-top: 2px solid rgb(90, 50, 255);
+  border-bottom: 2px solid rgb(90, 50, 255);
+}
+
+.column {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.space-between {
+  justify-content: space-between;
+}

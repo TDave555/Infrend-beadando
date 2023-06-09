@@ -1,0 +1,13 @@
+<div class="container">
+  <button mat-stroked-button class="add-new-button" (click)="addTravel()" *ngIf="isAdmin()">+ Add New Travel</button>
+  <div class="list-container" *ngIf="travels.length > 0; else noTravels">
+    <span *ngFor="let travel of travels">
+      <app-travel [travel]="travel" (travelEdited)="editTravel($event)" (travelDeleted)="deleteTravel($event)"></app-travel>
+    </span>
+  </div>
+  <ng-template #noTravels>
+    <div class="align-center-text pt-5">
+      <h1>{{text}}</h1>
+    </div>
+  </ng-template>
+</div>

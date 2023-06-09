@@ -1,0 +1,49 @@
+* {
+  border-width: 2px;
+  font-size: 1.15rem;
+  box-sizing: border-box;
+}
+
+.small-text, .small-text > span {
+  font-size: 0.8rem;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  background-color: lightskyblue;
+}
+
+.card {
+  width: 500px;
+  height: fit-content;
+  padding: 2rem;
+  box-shadow: 4px 4px 8px gray;
+  background-color: whitesmoke;
+}
+
+.button {
+  background-color: blue;
+}
+
+.button :active {
+  background-color: black
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.input {
+  width: 80%;
+}
+

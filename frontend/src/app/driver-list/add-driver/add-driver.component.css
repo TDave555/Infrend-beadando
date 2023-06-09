@@ -1,0 +1,66 @@
+* {
+  --green-color: rgb(30, 175, 30);
+
+  border-width: 2px;
+}
+
+.raised-button-green {
+  color: aliceblue;
+  background-color: var(--green-color);
+}
+
+.button {
+  width: 11ch;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+}
+
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flexbox;
+  justify-content: center;
+}
+
+.small-text {
+  font-size: 0.8rem;
+}
+
+.medium-text {
+  font-size: 1.0rem;
+}
+
+.large-text {
+  font-size: 2.2rem;
+}
+
+.pt-5 {
+  padding-top: 5rem;
+}
+
+.pb-3 {
+  padding-bottom: 3rem;
+}
+
+.mr-3 {
+  margin-right: 3rem;
+}
+
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.input-format {
+  width: 75%;
+}

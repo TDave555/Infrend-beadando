@@ -1,0 +1,36 @@
+<mat-card class="card-body">
+  <mat-card-header>
+    <mat-card-title class="larger-font">{{travel.from}} - {{travel.to}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="small-padding">
+    <mat-card-subtitle class="medium-font space-between small-margin-left-right">
+      <span>Purpose: <b>{{travel.purpose}}</b></span>
+      <span>Start Date: <b>{{travel.startDate}}</b></span>
+    </mat-card-subtitle>
+    <p class="medium-font space-between small-padding">
+      <span><u>Travelled Distance</u>: <b>{{travel.travelledDistance}}</b> km</span>
+      <span><u>New Mileage</u>: <b>{{travel.newMileage}}</b> km</span>
+    </p>
+    <div>
+      <hr>
+      <span class="larger-font">Driver:</span>
+      <div class="medium-font space-between small-padding">
+        <span>Name: <b>{{travel.driver.name}}</b></span>
+        <span>Birthdate: <b>{{travel.driver.birthdate}}</b></span>
+      </div>
+      <hr>
+      <span class="larger-font">Car:</span>
+      <div class="medium-font space-between small-padding">
+        <span>License Plate: <b>{{travel.car.licensePlate}}</b></span>
+        <span>Fuel: <b>{{travel.car.fuel}}</b></span>
+      </div>
+      <div class="medium-font small-padding">
+        <span>Type: <b>{{travel.car.type}}</b></span>
+      </div>
+    </div>
+    <mat-card-actions class="card-buttons-end" *ngIf="isAdmin()">
+      <button mat-raised-button color="primary" class="button-format" (click)="editTravel()">Edit</button>
+      <button mat-raised-button color="warn" class="button-format" (click)="deleteTravel()">Delete</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

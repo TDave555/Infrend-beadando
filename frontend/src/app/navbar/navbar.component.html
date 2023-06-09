@@ -1,0 +1,16 @@
+<mat-toolbar class="box-shadow-bottom multiple-lines">
+  <div class="menu-part-1">
+    <div>
+      <button mat-icon-button class="icon-button-size" (click)="forwardToSignup()" [disabled]="active[0]">
+        <mat-icon class="icon-size icon-middle">home</mat-icon>
+      </button>
+    </div>
+    <button mat-raised-button color="primary" class="wide-buttons rounded-borders" (click)="forwardToCars()" [disabled]="active[1]">Cars</button>
+    <button mat-raised-button color="primary" class="space-between-elements wide-buttons rounded-borders" (click)="forwardToDrivers()" [disabled]="active[2]">Drivers</button>
+    <button mat-raised-button color="primary" class="wide-buttons rounded-borders" (click)="forwardToTravels()" [disabled]="active[3]">Travels</button>
+    <button mat-raised-button color="primary" class="space-between-elements wide-buttons rounded-borders" (click)="forwardToReport()" [disabled]="active[4]">Report</button>
+  </div>
+  <div class="align-to-right">
+    <a class="link-button" (click)="logout()">Logout</a>
+  </div>
+</mat-toolbar>

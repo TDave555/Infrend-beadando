@@ -1,0 +1,54 @@
+* {
+  border-width: 2px;
+  font-size: 1.2rem;
+}
+
+.small-text {
+  font-size: 0.8rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.container {
+  margin: 60px 120px 40px 120px;
+  display: flexbox;
+  justify-content: center;
+}
+
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flexbox;
+  justify-content: center;
+}
+
+.input-format {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.footer-format {
+  margin-top: 50px;
+}
+
+.card-height {
+  height: 100%;
+  padding: 75px 0 25px 0;
+}
+
+.form-format {
+  min-width: 100px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.request-report {
+  max-width: 600px;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 8px gray;
+}

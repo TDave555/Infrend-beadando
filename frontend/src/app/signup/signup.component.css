@@ -1,0 +1,36 @@
+* {
+  --green-color: rgb(30, 175, 30);
+
+  font-size: 1.20em;
+  border-width: 2px;
+}
+
+.container {
+  margin: 20px 120px 40px 120px;
+  display: flexbox;
+  justify-content: center;
+}
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+.add-new-button {
+  color: var(--green-color);
+  border-color: var(--green-color);
+  border-radius: 10px;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.pt-5 {
+  padding-top: 5rem;
+}
+

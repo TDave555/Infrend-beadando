@@ -1,0 +1,30 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header class="justify-content-center">
+      <mat-card-title>
+        <h1>Enter your details to log in!</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-card-content class="text-align-center">
+        <mat-form-field class="input">
+          <mat-label>Email</mat-label>
+          <input type="email" placeholder="Your email address ..."
+          matInput formControlName="email"/>
+          <mat-error class="small-text" *ngIf="!this.loginForm.get('email')?.valid">Email is required and must be valid!</mat-error>
+        </mat-form-field><br>
+        <mat-form-field class="input">
+          <mat-label>Password</mat-label>
+          <input type="password" placeholder="Your password ..." maxlength="128"
+          matInput formControlName="password" #password/>
+          <mat-error class="small-text" *ngIf="!this.loginForm.get('password')?.valid">Password is required and it's length must be between 6 and 128 characters!</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-footer class="text-align-center">
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Login</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</div>

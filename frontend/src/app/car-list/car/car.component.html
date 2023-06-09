@@ -1,0 +1,19 @@
+<mat-card class="card-body">
+  <mat-card-header>
+    <mat-card-title class="larger-font">{{car.licensePlate}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="small-padding">
+    <mat-card-subtitle class="medium-font small-margin-left-right"><b>{{car.type}}</b></mat-card-subtitle>
+    <p class="medium-font space-between small-padding medium-margin-left-right">
+      <span><u>Fuel</u>:<b> {{car.fuel}}</b></span>
+      <span class="text-end"><u>Consumption</u>: <b>{{car.consumption}}</b> liter/100km</span>
+    </p>
+    <p class="medium-font space-between small-padding medium-margin-left-right">
+      <span><u>Mileage</u>: <b>{{car.mileage}} km</b></span>
+    </p>
+    <mat-card-actions class="card-buttons-end" *ngIf="isAdmin()">
+      <button mat-raised-button color="primary" class="button-format" (click)="editCar()">Edit</button>
+      <button mat-raised-button color="warn" class="button-format" (click)="deleteCar()">Delete</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

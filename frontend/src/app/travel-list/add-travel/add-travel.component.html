@@ -1,0 +1,74 @@
+<div class="container">
+  <mat-card class="card pt-5 pb-3">
+    <mat-card-header class="align-center pb-3">
+      <mat-card-title class="large-text">{{title}}</mat-card-title>
+    </mat-card-header>
+    <form (ngSubmit)="handleDriver()" [formGroup]="travelForm">
+      <mat-card-content>
+        <div class="align-center medium-text">
+          <mat-form-field class="input-format mb-1">
+            <mat-label>From</mat-label>
+            <input type="text" matInput maxlength="256" formControlName="from" #from/>
+            <mat-hint class="small-text" align="end">{{from.value.length}}/256</mat-hint>
+            <mat-error *ngIf="!this.travelForm.get('from')?.valid">Form place is required!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>To</mat-label>
+            <input type="text" matInput maxlength="256" formControlName="to" #to/>
+            <mat-hint class="small-text" align="end">{{to.value.length}}/256</mat-hint>
+            <mat-error *ngIf="!this.travelForm.get('to')?.valid">To place is required!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Purpose</mat-label>
+            <mat-select formControlName="purpose">
+              <mat-option *ngFor="let purpose of purposes" [value]="purpose">
+                {{purpose}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="!this.travelForm.get('purpose')?.valid">Purpose is required!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Start Date</mat-label>
+            <input type="date" matInput formControlName="startDate"/>
+            <mat-error *ngIf="!this.travelForm.get('startDate')?.valid">Start date is required!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Travelled Distance</mat-label>
+            <input type="number" matInput formControlName="travelledDistance"/>
+            <mat-error *ngIf="!this.travelForm.get('travelledDistance')?.valid">Travelled distance is required and must be 0 or above it!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Car</mat-label>
+            <mat-select formControlName="car">
+              <mat-option *ngFor="let car of cars" [value]="car">
+                {{car.licensePlate}} - {{car.type}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="!this.travelForm.get('car')?.valid">Car is required!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Driver</mat-label>
+            <mat-select formControlName="driver">
+              <mat-option *ngFor="let driver of drivers" [value]="driver">
+                {{driver.name}} - {{driver.driverLicense}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="!this.travelForm.get('driver')?.valid">Driver is required!</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions class="align-center">
+          <span class="mr-3" *ngIf="editMode">
+            <button mat-stroked-button class="button" color="primary" type="button" (click)="resetForm()">Reset</button>
+          </span>
+          <button mat-raised-button class="button raised-button-green" type="submit">{{handleButton}}</button>
+          <button mat-raised-button class="button" color="warn" type="button" (click)="cancel()">Cancel</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</div>

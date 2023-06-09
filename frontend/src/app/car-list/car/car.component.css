@@ -1,0 +1,46 @@
+.larger-font {
+  font-size: 0.8em;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.medium-font {
+  font-size: 1.3rem;
+}
+
+.small-padding {
+  padding: 5px 10px;
+}
+
+.medium-margin-left-right {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.small-margin-left-right {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.card-body {
+  margin: 10px 15px;
+  box-shadow: 2px 2px 8px gray;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-buttons-end {
+  text-align: end;
+}
+
+.button-format {
+  font-size: 1.2em;
+  width: 100px;
+}

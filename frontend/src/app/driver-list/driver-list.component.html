@@ -1,0 +1,13 @@
+<div class="container">
+  <button mat-stroked-button class="add-new-button" (click)="addDriver()" *ngIf="isAdmin()">+ Add New Driver</button>
+  <div class="list-container" *ngIf="drivers.length > 0; else noDrivers">
+    <span *ngFor="let driver of drivers">
+      <app-driver [driver]="driver" (driverEdited)="editDriver($event)" (driverDeleted)="deleteDriver($event)"></app-driver>
+    </span>
+  </div>
+  <ng-template #noDrivers>
+    <div class="align-center-text pt-5">
+      <h1>{{text}}</h1>
+    </div>
+  </ng-template>
+</div>

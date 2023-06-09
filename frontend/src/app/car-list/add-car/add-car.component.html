@@ -1,0 +1,57 @@
+<div class="container">
+  <mat-card class="card pt-5 pb-3">
+    <mat-card-header class="align-center pb-3">
+      <mat-card-title class="large-text">{{title}}</mat-card-title>
+    </mat-card-header>
+    <form (ngSubmit)="handleCar()" [formGroup]="carForm">
+      <mat-card-content>
+        <div class="align-center medium-text">
+          <mat-form-field class="input-format mb-1">
+            <mat-label>License plate number</mat-label>
+            <input type="text" matInput maxlength="7" formControlName="licensePlate" #licensePlate/>
+            <mat-hint class="small-text" align="end">{{licensePlate.value.length}}/7</mat-hint>
+            <mat-error *ngIf="!this.carForm.get('licensePlate')?.valid">Valid license plate number is required!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Type</mat-label>
+            <input type="text" matInput maxlength="64" formControlName="type" #type/>
+            <mat-hint class="small-text" align="end">{{type.value.length}}/64</mat-hint>
+            <mat-error *ngIf="!this.carForm.get('type')?.valid">Type is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Fuel</mat-label>
+            <mat-select formControlName="fuel">
+              <mat-option *ngFor="let fuel of fuels" [value]="fuel">
+                {{fuel}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="!this.carForm.get('fuel')?.valid">Fuel is required!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Consumption</mat-label>
+            <input type="number" matInput formControlName="consumption"/>
+            <mat-error *ngIf="!this.carForm.get('consumption')?.valid">{{consumptionErrorMsg}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>>Mileage</mat-label>
+            <input type="number" formControlName="mileage" matInput/>
+            <mat-error *ngIf="!this.carForm.get('mileage')?.valid">Mileage is required and must be 0 or above it!</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions class="align-center">
+          <span class="mr-3" *ngIf="editMode">
+            <button mat-stroked-button class="button" color="primary" type="button" (click)="resetForm()">Reset</button>
+          </span>
+          <button mat-raised-button class="button raised-button-green" type="submit">{{handleButton}}</button>
+          <button mat-raised-button class="button" color="warn" type="button" (click)="cancel()">Cancel</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</div>

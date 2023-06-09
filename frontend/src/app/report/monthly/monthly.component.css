@@ -1,0 +1,131 @@
+* {
+  border-width: 2px;
+  font-size: 1.2rem;
+}
+
+.small-text {
+  font-size: 0.8rem;
+}
+
+.medium-text {
+  font-size: 1.4rem;
+}
+
+.large-text {
+  font-size: 2rem;
+}
+
+.half-bold {
+  font-weight: 500;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.mb-1{
+  margin-bottom: 1rem;
+}
+
+.mt-2{
+  margin-top: 2rem;
+}
+
+.pb-3 {
+  padding-bottom: 3rem;
+}
+
+.pb-1{
+  padding-bottom: 1rem;
+}
+
+.pt-3 {
+  padding-top: 3rem;
+}
+
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.container {
+  margin: 60px 120px 40px 120px;
+  display: flexbox;
+  justify-content: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flexbox;
+  justify-content: center;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.input-format {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.header-format {
+  margin-bottom: 36px;
+}
+
+.footer-format {
+  margin-top: 50px;
+}
+
+.card-height {
+  height: 100%;
+  padding: 75px 0 25px 0;
+}
+
+.form-format {
+  min-width: 100px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.request-report {
+  max-width: 600px;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 8px gray;
+}
+
+.car-card {
+  width: 59%;
+}
+
+.statistics-card {
+  width: 41%;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.flex-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}

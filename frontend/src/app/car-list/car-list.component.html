@@ -1,0 +1,13 @@
+<div class="container">
+  <button mat-stroked-button class="add-new-button" (click)="addCar()" *ngIf="isAdmin()">+ Add New Car</button>
+  <div class="list-container" *ngIf="cars.length > 0; else noCars">
+    <span *ngFor="let car of cars">
+      <app-car [car]="car" (carEdited)="editCar($event)" (carDeleted)="deleteCar($event)"></app-car>
+    </span>
+  </div>
+  <ng-template #noCars>
+    <div class="align-center-text pt-5">
+      <h1>{{text}}</h1>
+    </div>
+  </ng-template>
+</div>

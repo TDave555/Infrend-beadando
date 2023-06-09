@@ -1,0 +1,92 @@
+<div class="container">
+  <div>
+    <mat-card class="box-shadow">
+      <mat-card-header class="align-center header-format">
+        <mat-card-title class="large-text">Monthly Report</mat-card-title>
+      </mat-card-header>
+      <div class="flex-content max-width">
+        <div class="car-card">
+          <mat-card class="box-shadow pt-3 pb-3 m-2">
+            <mat-card-header class="align-center">
+              <mat-card-title class="large-text">{{monthlyReport.car.licensePlate}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-card-subtitle class="align-center"><b>{{monthlyReport.car.type}}</b></mat-card-subtitle>
+              <div class="space-between mt-2 mb-1">
+                <span class="medium-text">Fuel: <b>{{monthlyReport.car.fuel}}</b></span>
+                <span class="medium-text">Consumption: <b>{{monthlyReport.car.consumption}}</b> liter/100km</span>
+              </div>
+              <div class="align-center mt-2 mb-1">
+                <span class="medium-text">Mileage: <b>{{monthlyReport.car.mileage}}</b> km</span>
+              </div>
+              <div class="space-between mt-2">
+                <span class="medium-text">Starting Mileage: <b>{{monthlyReport.startingMileage}}</b> km</span>
+                <span class="medium-text">Finishing Mileage: <b>{{monthlyReport.finishingMileage}}</b> km</span>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <mat-card  class="box-shadow pt-3 pb-3 m-2">
+            <mat-card-header class="align-center">
+              <mat-card-title class="large-text">Travels</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="pt-2">
+                <mat-card class="box-shadow align-center mb-1" *ngFor="let travel of monthlyReport.travels">
+                  <mat-card-header class="align-center mb-1 half-bold medium-text mb-1 pb-1">{{travel.from}} - {{travel.to}}</mat-card-header>
+                  <mat-card-content>
+                    <mat-card-subtitle class="space-between mb-1">
+                      <span>Purpose: {{travel.purpose}}</span>
+                      <span>Start date: {{travel.startDate}}</span>
+                    </mat-card-subtitle>
+                    <div class="space-between mb-1">
+                      <span>Travelled distance: {{travel.travelledDistance}} km</span>
+                      <span>New mileage: {{travel.newMileage}} km</span>
+                    </div>
+                    <hr>
+                    <p>Driver:</p>
+                    <div class="space-between mb-1">
+                      <span>Name: {{travel.driver.name}}</span>
+                      <span>License: {{travel.driver.driverLicense}}</span>
+                    </div>
+                    <div>
+                      <span>Birthdate: {{travel.driver.birthdate}}</span>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="statistics-card">
+          <div class="m-2">
+            <mat-card class="box-shadow pt-2 pb-3">
+              <mat-card-header class="align-center">
+                <mat-card-title class="large-text">Private travel statistics</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="mt-2">
+                <p class="medium-text pb-1">Travelled Distance: <b>{{monthlyReport.privateSummary.travelledDistance}}</b> km</p>
+                <p class="medium-text pb-1">Consumption Cost: <b>{{monthlyReport.privateSummary.consumptionCost.toFixed(2)}}</b> Ft</p>
+                <p class="medium-text pb-1">Flat Rate: <b>{{monthlyReport.privateSummary.flatRate.toFixed(2)}}</b> Ft</p>
+                <hr>
+                <p class="medium-text pt-1">Total Cost: <b>{{monthlyReport.privateSummary.totalCost.toFixed(2)}}</b> Ft</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="m-2">
+            <mat-card class="box-shadow pt-2 pb-3">
+              <mat-card-header class="align-center">
+                <mat-card-title class="large-text">Business travel statistics</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="mt-2">
+                <p class="medium-text pb-1">Travelled Distance: <b>{{monthlyReport.businessSummary.travelledDistance}}</b> km</p>
+                <p class="medium-text pb-1">Consumption Cost: <b>{{monthlyReport.businessSummary.consumptionCost.toFixed(2)}}</b> Ft</p>
+                <p class="medium-text pb-1">Flat Rate: <b>{{monthlyReport.businessSummary.flatRate.toFixed(2)}}</b> Ft</p>
+                <hr>
+                <p class="medium-text pt-1">Total Cost: <b>{{monthlyReport.businessSummary.totalCost.toFixed(2)}}</b> Ft</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+      <mat-card-footer class="footer-format"></mat-card-footer>
+    </mat-card>
+  </div>
+</div>

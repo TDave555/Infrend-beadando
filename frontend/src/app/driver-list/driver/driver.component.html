@@ -1,0 +1,21 @@
+<mat-card class="card-body" [ngClass]="{expired : isExpired}">
+  <mat-card-header>
+    <mat-card-title class="larger-font">{{driver.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="small-padding">
+    <mat-card-subtitle class="medium-font space-between small-margin-left-right">
+      <span class="space-after-date">Birthdate: <b>{{driver.birthdate}}</b></span>
+      <span>Address: <b>{{driver.address}}</b></span>
+    </mat-card-subtitle>
+    <p class="medium-font medium-margin-left-right space-between small-padding">
+      <span><u>Driver license number</u>: <b>{{driver.driverLicense}}</b></span>
+    </p>
+    <p class="medium-font medium-margin-left-right space-between small-padding">
+      <span><u>Driver License Expiration Date</u>: <b>{{driver.driverLicenseExpiration}}</b></span>
+    </p>
+    <mat-card-actions class="card-buttons-end" *ngIf="isAdmin()">
+      <button mat-raised-button color="primary" class="button-format" (click)="editDriver()">Edit</button>
+      <button mat-raised-button color="warn" class="button-format" (click)="deleteDriver()">Delete</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,68 @@
+<div class="container">
+  <mat-card class="card pt-5 pb-3">
+    <mat-card-header class="align-center pb-3">
+      <mat-card-title class="large-text">Add a new user</mat-card-title>
+    </mat-card-header>
+    <form (ngSubmit)="addUser()" [formGroup]="userForm">
+      <mat-card-content>
+        <div class="align-center medium-text">
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Nickname</mat-label>
+            <input type="text" matInput maxlength="64" formControlName="nickname" #nickname/>
+            <mat-hint class="small-text" align="end">{{nickname.value.length}}/64</mat-hint>
+            <mat-error *ngIf="!this.userForm.get('nickname')?.valid">Nickname is required!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email"/>
+            <mat-error *ngIf="!this.userForm.get('email')?.valid">Email is required and must be valid!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Email Again</mat-label>
+            <input type="email" matInput formControlName="emailAgain"/>
+            <mat-error *ngIf="!this.userForm.get('emailAgain')?.valid">Email must be repeated and must be the same as the previous!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" #password/>
+            <mat-hint align="end">{{password.value.length}}
+              <span *ngIf="password.value.length < 6; else greaterThan6">/6</span>
+              <ng-template #greaterThan6>
+                <span>/128</span>
+              </ng-template>
+            </mat-hint>
+            <mat-error *ngIf="!this.userForm.get('password')?.valid">Password is required and it's length must be between 6 and 128 characters!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Password Again</mat-label>
+            <input type="password" matInput formControlName="passwordAgain" #passwordAgain/>
+            <mat-hint align="end">{{passwordAgain.value.length}}
+              <span *ngIf="passwordAgain.value.length < 6; else greaterThan6">/6</span>
+              <ng-template #greaterThan6>
+                <span>/128</span>
+              </ng-template>
+            </mat-hint>
+            <mat-error *ngIf="!this.userForm.get('passwordAgain')?.valid">Password must be repeated and must be the same as the previous!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role">
+              <mat-option *ngFor="let role of roles" [value]="role">
+                {{role}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="!this.userForm.get('fuel')?.valid">Role is required!</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions class="align-center">
+          <button mat-raised-button class="button raised-button-green" type="submit">Add</button>
+          <button mat-raised-button class="button" color="warn" type="button" (click)="cancel()">Cancel</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</div>

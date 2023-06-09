@@ -1,0 +1,35 @@
+* {
+  --green-color: rgb(30, 175, 30);
+
+  font-size: 1.30em;
+  border-width: 2px;
+}
+
+.add-new-button {
+  color: var(--green-color);
+  border-color: var(--green-color);
+  border-radius: 10px;
+}
+
+.container {
+  margin: 20px 120px 40px 120px;
+  display: flexbox;
+  justify-content: center;
+}
+
+.list-container {
+  width: 100%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+
+.align-center-text {
+  text-align: center;
+}
+
+.pt-5 {
+  padding-top: 5rem;
+}

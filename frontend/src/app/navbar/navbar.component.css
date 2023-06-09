@@ -1,0 +1,56 @@
+.space-between-elements {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.multiple-lines {
+  min-height: fit-content;
+  height: 3.2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menu-part-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-part-1 button{
+  height: fit-content;
+}
+
+.link-button {
+  font-size: 1.5rem;
+  color: rgb(70, 90, 185);
+  cursor: pointer;
+}
+
+.link-button:hover {
+  color: rgb(110, 130, 230);
+}
+
+.box-shadow-bottom {
+  box-shadow: 0px 3px 9px gray;
+}
+
+.wide-buttons {
+  width: 11ch;
+  font-size: 22px;
+}
+
+.icon-size {
+  font-size: 36px;
+}
+
+.icon-middle {
+  width: fit-content;
+}
+
+.icon-button-size {
+  height: 50px;
+  width: 50px;
+}
+
+.rounded-borders {
+  border-radius: 10px;
+}

@@ -1,0 +1,50 @@
+<div class="container">
+  <mat-card class="card pt-5 pb-3">
+    <mat-card-header class="align-center pb-3">
+      <mat-card-title class="large-text">{{title}}</mat-card-title>
+    </mat-card-header>
+    <form (ngSubmit)="handleDriver()" [formGroup]="driverForm">
+      <mat-card-content>
+        <div class="align-center medium-text">
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput maxlength="256" formControlName="name" #name/>
+            <mat-hint class="small-text" align="end">{{name.value.length}}/256</mat-hint>
+            <mat-error *ngIf="!this.driverForm.get('name')?.valid">Name is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Birthdate</mat-label>
+            <input type="date" formControlName="birthdate" matInput/>
+            <mat-error *ngIf="!this.driverForm.get('birthdate')?.valid">Birthdate is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Address</mat-label>
+            <input type="text" matInput maxlength="256" formControlName="address" #address/>
+            <mat-hint class="small-text" align="end">{{address.value.length}}/256</mat-hint>
+            <mat-error *ngIf="!this.driverForm.get('address')?.valid">Addres is required!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>Driver License</mat-label>
+            <input type="text" matInput placeholder="CB256128" maxlength="8" formControlName="driverLicense" #license/>
+            <mat-hint class="small-text" align="end">{{license.value.length}}/8</mat-hint>
+            <mat-error *ngIf="!this.driverForm.get('driverLicense')?.valid">Driver license is not in a valid form (format: 'AB123456')!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-format mb-1">
+            <mat-label>>Driver License Expiration</mat-label>
+            <input type="date" formControlName="driverLicenseExpiration" matInput/>
+            <mat-error *ngIf="!this.driverForm.get('driverLicenseExpiration')?.valid">Driver license expiration date is required!</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions class="align-center">
+          <span class="mr-3" *ngIf="editMode">
+            <button mat-stroked-button class="button" color="primary" type="button" (click)="resetForm()">Reset</button>
+          </span>
+          <button mat-raised-button class="button raised-button-green" type="submit">{{handleButton}}</button>
+          <button mat-raised-button class="button" color="warn" type="button" (click)="cancel()">Cancel</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </form>
+  </mat-card>
+</div>
